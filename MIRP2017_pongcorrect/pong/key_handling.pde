@@ -3,9 +3,9 @@ void keyPressed() {
   if (key == LEFT_DOWN)     left_down = true;
   if (key == RIGHT_UP)      right_up = true;
   if (key == RIGHT_DOWN)    right_down = true;
-  if (key == RESET)         reset = true;
+  if (key == RESET)         gameState = 0;
   if (key == PAUSE)         pause = true;
-  if (key == START)         start = true;
+  if (key == START)         gameState = 1;
 }
 
 void keyReleased() {
@@ -15,5 +15,24 @@ void keyReleased() {
   if (key == RIGHT_DOWN)    right_down = false;
   if (key == RESET)         reset = false;
   if (key == PAUSE)         pause = false;
-  if (key == START)         start = false;
-}
+  //if (key == START)         start = false;
+  }
+void startscreen() {
+  background(bgColor);
+  textSize(70);
+  text("PONG", 150, 150);
+  textSize(20);
+  text("To Start Screen Press 's'", 150, 200);
+  if (gameState == 1)
+      drawGameScreen(); 
+    
+  
+   
+ }
+
+  
+  
+  
+  
+  
+  

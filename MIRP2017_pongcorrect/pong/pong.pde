@@ -11,10 +11,14 @@ void setup() {
 }
 
 void draw() {
-  drawGameScreen();
-}
+   startscreen();
+   
+ }
 
 void drawGameScreen() {
+  if (gameState==0)
+  startscreen();
+  if (gameState==1){
   background(bgColor);
   updateBallVelocity();
   resolvecollisions();
@@ -25,9 +29,10 @@ void drawGameScreen() {
   detectCollision();
   leftLose();
   rightLose();
+  textSize(50);
   text(leftScore,100,200);
   text(rightScore,300,200);
-  
+  }
  // Draw background
   // Update Ball Velocity and Resolve Collisions
   // Update Ball and Paddle Positions
@@ -53,6 +58,17 @@ void drawPaddles() {
 }
 
 void resetGame(){
+ background(bgColor);
+  textSize(70);
+  text("PONG", 150, 150);
+  textSize(20);
+  text("To Start Screen Press 's'", 150, 200);
+  if (gameState == 1)
+      drawGameScreen();
+  ballX=0;
+ ballY=0;
+ leftScore=0;
+ rightScore=0;
   // Reset Ball and Paddle Positions
   // Reset Ball Velocity
 }

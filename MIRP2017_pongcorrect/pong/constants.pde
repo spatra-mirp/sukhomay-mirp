@@ -36,3 +36,4 @@ char RESET = 'r', PAUSE = 'p', START = 's';
 boolean left_up, right_up, left_down, right_down;
 boolean reset, pause, start;
 float buffer = paddleLength/2;
+int gameState;
