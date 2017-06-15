@@ -54,13 +54,13 @@ TSPoint p = ts.getPoint();
 //TSPoint p = ts.pressureThreshhold();
 if(p.z > 1){
 Input1 = p.x;
-Setpoint1 = 520;
+Setpoint1 = 564;
 PID1.Compute();
 ServoX.write(Output1);
 }
 
 if(p.z>0){
-Setpoint2 = 520;
+Setpoint2 = 500;
 Input2 = p.y;
  PID2.Compute();
 
